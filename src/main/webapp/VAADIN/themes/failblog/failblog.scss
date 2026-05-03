@@ -1,0 +1,146 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+//@import "../reindeer/reindeer.scss";
+//@import "../reindeer/grid/grid.scss";
+$v-background-color: hsl(200, 90%, 90%);
+$v-layout-margin-top: 5px;
+$v-layout-margin-right: 0px;
+$v-layout-margin-bottom: 5px;
+$v-layout-margin-left: 0px;
+
+@import "../valo/valo";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin failblog {
+  /* Include all the styles from the reindeer theme */
+  @include valo;
+
+  /* Insert your theme rules here */
+  .container {
+  	padding: 40px !important;
+  }
+ #title {
+  	font-size: 26px;
+  	font-weight: bold;
+  	line-height: normal;
+  }
+
+  #subtitle {
+  	font-size: 18px;
+  	line-height: normal;
+  }
+
+  #main {
+  	margin-top: 20px;
+  }
+
+  #content {
+  	width: 700px;
+  	padding-right: 30px;
+  	border: none;
+  	background: none;
+
+  	.v-panel-captionwrap {
+  		display: none;
+  	}
+
+  	.v-panel-content {
+  		background: none;
+  		border: none;
+  	}
+
+  	.v-panel-deco {
+  		display: none;
+  	}
+  }
+
+  #side {
+  	.v-button {
+  		margin-left: 0px;
+  	}
+  }
+
+  .result {
+  	font-size: 16px;
+  	font-weight: bold;
+  	line-height: normal;
+  	margin-bottom: 10px;
+  }
+
+  .article {
+  	margin-bottom: 20px;
+
+  	.article-title {
+  		font-size: 18px;
+	  	font-weight: bold;
+	  	line-height: normal;
+  	}
+
+  	.article-lead {
+  		margin: 5px 0;
+  	}
+  }
+
+  .v-label-undef-w {
+  	white-space: normal !important;
+  }
+  .article-list {
+    padding: 30px !important;
+  }
+  #article-detail {
+    padding: 30px !important;
+  }
+
+  #article-detail {
+  	margin-bottom: 20px;
+
+  	#article-title {
+  		font-size: 18px;
+	  	font-weight: bold;
+	  	line-height: normal;
+  	}
+
+  	#article-lead {
+  		margin: 5px 0;
+  		font-weight: bold;
+  	}
+
+  	#article-text {
+  		margin-bottom: 10px;
+  	}
+  }
+
+  #comments {
+  	margin-bottom: 10px;
+  	padding-left: 10px;
+  	padding-top: 10px;
+  	border-top: 1px solid black;
+
+  	#heading {
+	  	font-size: 14px;
+		font-weight: bold;
+		line-height: normal;
+		margin-bottom: 1ex;
+	}
+
+	.author {
+		font-weight: bold;
+		line-height: normal;
+	  }
+
+	.text {
+		margin-bottom: 1ex;
+	}
+  }
+
+  .subheading {
+	font-size: 16px;
+  	font-weight: bold;
+  	line-height: normal;
+  }
+
+  .user {
+	margin: 10px 0;
+  }
+}

@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'war'
+    id "com.devsoap.plugin.vaadin" version "2.0.0.beta2"
+}
+
+group 'at.jku.ins.securecode.failblog'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+vaadin {
+    version '8.15.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    runtime group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.5.2'
+    runtime group: 'org.hsqldb', name: 'hsqldb', version: '2.5.2'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '8.5.5'
+    runtime group: 'org.flywaydb', name: 'flyway-core', version: '8.5.5'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}

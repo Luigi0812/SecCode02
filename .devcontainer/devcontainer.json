@@ -1,0 +1,4 @@
+{
+  "name": "failblog-devcontainer",
+  "image": "tomcat:9.0-jdk8"
+}

@@ -1,0 +1,12 @@
+@import "addons.scss";
+@import "failblog.scss";
+$v-background-color: hsl(200, 50%, 50%);
+@import "../valo/valo";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in failblog.scss */
+.failblog {
+  @include addons;
+  @include failblog;
+  @include valo
+}

@@ -1,0 +1,145 @@
+# =========================
+# Gradle
+# =========================
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# Gradle build output
+**/build/
+!src/**/build/
+
+# =========================
+# Maven (just in case)
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# Java compiled / packaged
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# =========================
+# Eclipse
+# =========================
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+.apt_generated_test/
+.springBeans
+.sts4-cache/
+bin/
+
+# =========================
+# NetBeans
+# =========================
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+*.code-workspace
+
+# =========================
+# Vaadin
+# =========================
+src/main/webapp/VAADIN/widgetsets/
+src/main/webapp/VAADIN/gwt-unitCache/
+src/main/webapp/VAADIN/themes/**/styles.css
+src/main/webapp/VAADIN/themes/**/styles.css.map
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+npm-debug.log*
+
+# =========================
+# Payara / Application Server
+# =========================
+payara5/
+payara6/
+*.pid
+domain1/
+glassfish/
+
+# =========================
+# Logs
+# =========================
+*.log
+*.log.*
+logs/
+log/
+
+# =========================
+# OS-specific
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.keystore
+secrets.properties
+application-local.properties
+
+# =========================
+# Dev container
+# =========================
+.devcontainer/devcontainer.json.bak
+
+# =========================
+# Temp / backup files
+# =========================
+*.bak
+*.swp
+*.swo
+*~
+*.tmp
+*.orig
