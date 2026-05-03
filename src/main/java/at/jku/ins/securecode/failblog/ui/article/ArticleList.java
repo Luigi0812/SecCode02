@@ -2,7 +2,6 @@ package at.jku.ins.securecode.failblog.ui.article;
 
 import at.jku.ins.securecode.failblog.model.Article;
 import at.jku.ins.securecode.failblog.ui.FailblogUI;
-import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
@@ -29,8 +28,9 @@ public class ArticleList extends CustomComponent {
 
         // show query, if this is a search result
         if (query != null && !query.isEmpty()) {
+            // FIX (reflected XSS): rely on Vaadin's default ContentMode.TEXT so that query are escaped before
+            // they reach the DOM. The previous setContentMode(ContentMode.HTML) call allowed tag injection.
             Label result = new Label("Search result for '" + query + "':");
-            result.setContentMode(ContentMode.HTML);
             result.setStyleName("result");
             layout.addComponent(result);
         }

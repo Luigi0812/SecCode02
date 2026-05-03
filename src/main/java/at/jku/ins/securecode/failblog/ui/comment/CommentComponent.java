@@ -6,6 +6,8 @@ import at.jku.ins.securecode.failblog.ui.FailblogUI;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickListener;
+import org.owasp.html.PolicyFactory;
+import org.owasp.html.Sanitizers;
 
 import java.util.List;
 
@@ -15,6 +17,15 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Displays comments and a form to add a comment
  */
 public class CommentComponent extends CustomComponent {
+
+    /**
+     * FIX (stored XSS): whitelist policy for comment HTML. Allows basic
+     * formatting tags and safe links; strips <script>, <img>, <iframe>,
+     * every on*= event handler, javascript: URLs, and anything else not
+     * explicitly permitted.
+     */
+    private static final PolicyFactory COMMENT_POLICY =
+            Sanitizers.FORMATTING.and(Sanitizers.LINKS);
 
     private final VerticalLayout layout;
     private final VerticalLayout container;
@@ -83,7 +94,9 @@ public class CommentComponent extends CustomComponent {
         user.setStyleName("author");
         singleComment.addComponent(user);
 
-        final Label text = new Label(comment.getText());
+        // FIX (stored XSS): run the persisted comment text through the OWASP HTML Sanitizer before rendering it as HTML.
+        // Any markup outside the // FORMATTING + LINKS whitelist (e.g. <script>, <img onerror=...>) is removed.
+        final Label text = new Label(COMMENT_POLICY.sanitize(comment.getText()));
         text.setStyleName("text");
         text.setContentMode(ContentMode.HTML);
         singleComment.addComponent(text);

@@ -25,5 +25,7 @@ dependencies {
     runtime group: 'org.hsqldb', name: 'hsqldb', version: '2.5.2'
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '8.5.5'
     runtime group: 'org.flywaydb', name: 'flyway-core', version: '8.5.5'
+    implementation group: 'com.googlecode.owasp-java-html-sanitizer', name: 'owasp-java-html-sanitizer', version: '20220608.1'
+    runtime group: 'com.googlecode.owasp-java-html-sanitizer', name: 'owasp-java-html-sanitizer', version: '20220608.1'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
